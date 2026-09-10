@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Extractor with Preview</title>
+    <link rel="stylesheet" href="/static/style.css?v=5">
+    <style>
+        .preview-toggle-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .preview-box {
+            display: none;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 14px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .center-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .download-btn {
+            display: block;
+            margin: 30px auto 0 auto;
+        }
+
+        .success-message {
+            background-color: #e6ffed;
+            color: #256029;
+            border: 1px solid #b5e2c1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <h1>Text Formatting with OCR Text Extraction</h1>
+
+        <div class="container">
+        <div class="content-box"
+            <h2>📄 Upload PDF/Image</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                <div class="file-upload">
+                    <input type="file" name="file" id="file-drop" required>
+                </div>
+                <button type="submit" class="btn upload-btn">Upload & Process</button>
+            </form>
+
+            {% if preview_text %}
+                <div class="success-message">
+                    ✅ Text has been successfully extracted! Here is the preview:
+                </div>
+                <div class="center-btn">
+                    <button class="preview-toggle-btn" onclick="togglePreview()">👁️ Preview Text</button>
+                </div>
+                <div id="preview-box" class="preview-box">
+                    <h3>📝 Preview Extracted Text:</h3>
+                    <pre>{{ preview_text }}</pre>
+                </div>
+            {% endif %}
+
+            {% if show_download %}
+                <a href="/download" class="btn download-btn">⬇️ Download DOCX</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function togglePreview() {
+            const box = document.getElementById('preview-box');
+            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

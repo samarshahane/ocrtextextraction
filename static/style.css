@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.top-heading {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 30px 0 10px 0;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(to left, #0b77d6, #0a3a3c);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px; /* Smoother look */
+}
+
+.content-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 55px;
+    width: 200%;
+    max-width: 900px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out; /* Animation added */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.file-upload {
+    margin-bottom: 5px;
+}
+
+.file-upload input[type="file"] {
+    display: inline-block;
+    padding: 15px;
+    background-color: #ec7456;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.file-upload input[type="file"]:hover {
+    background-color: #ff6347;
+}
+
+.btn {
+    background-color: #0c240d;
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn {
+    background-color: #0459b3;
+    border-radius: 15px;
+    margin-bottom: 0px;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+}
+
+.preview-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #c07d7d;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+    color: #000000;
+    font-size: 14px;
+    text-align: left;
+    resize: vertical;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Updated spacing and animation for download button */
+.download-btn {
+    background-color: #33d317;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 14px 28px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #1a9e08;
+    transform: scale(1.05);
+}
+
+/* Custom scrollbar for preview box */
+.preview-box::-webkit-scrollbar {
+    width: 10px;
+}
+.preview-box::-webkit-scrollbar-track {
+    background: #0f0404;
+}
+.preview-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.preview-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
