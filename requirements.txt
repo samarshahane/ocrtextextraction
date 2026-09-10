@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pdfplumber
+easyocr
+python-docx
+opencv-python-headless
+numpy
+Pillow
